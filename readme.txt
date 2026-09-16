@@ -74,6 +74,10 @@ This plugin can connect to the third-party services listed below. **None of them
 
 Every core SEO feature - meta tags, Schema, sitemaps, internal links, breadcrumbs, the content types - works fully offline with no key and no external connection.
 
+= Source code =
+
+The released source is on GitHub at https://github.com/aumcreate/aumviso — bug reports and pull requests are welcome there.
+
 == Installation ==
 
 1. Upload the `aumviso` folder to `/wp-content/plugins/`
