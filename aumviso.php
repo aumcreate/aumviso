@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: AumViso – AI SEO & GEO: Schema, Sitemaps & Internal Links
+ * Plugin Name: AumViso – llms.txt, Schema & Sitemaps for AI Search & SEO
  * Description: AumViso — SEO + GEO all-in-one: meta tags, Schema, sitemaps, internal links, FAQ/Glossary/Guide content types, AI tools, knowledge building, automation and llms.txt.
- * Version:     2.0.7
+ * Version:     2.0.8
  * Author:      AumCreate
  * Author URI:  https://aumcreate.com
  * Text Domain: aumviso
@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
 require_once plugin_dir_path(__FILE__) . 'includes/core/class-activator.php';
 
 // Constants
-define('AUMVISO_VERSION',   '2.0.7');
+define('AUMVISO_VERSION',   '2.0.8');
 define('AUMVISO_FILE',      __FILE__);
 define('AUMVISO_DIR',       plugin_dir_path(__FILE__));
 define('AUMVISO_URL',       plugin_dir_url(__FILE__));

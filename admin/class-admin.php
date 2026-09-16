@@ -323,8 +323,25 @@ class AumViso_Admin {
 				}
 				?>
 			</div>
+			<?php $this->render_ecosystem_note(); ?>
 		</div>
 		<?php
+	}
+
+	/**
+	 * One line at the foot of the settings screen pointing at the rest of the
+	 * AumCreate ecosystem. Plain text with a link, no tracking beyond the UTM
+	 * tags in the URL itself.
+	 */
+	private function render_ecosystem_note(): void {
+		$url = 'https://aumcreate.com/?utm_source=plugin&utm_medium=aumviso&utm_campaign=settings';
+		echo '<p class="aum-ecosystem-note" style="margin:24px 0 0;color:#646970;font-size:12px">';
+		printf(
+			/* translators: %s: link to aumcreate.com */
+			esc_html__( 'Part of the AumCreate ecosystem — themes and templates built around it. %s', 'aumviso' ),
+			'<a href="' . esc_url( $url ) . '" target="_blank" rel="noopener">aumcreate.com</a>'
+		);
+		echo '</p>';
 	}
 
 	/**

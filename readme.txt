@@ -1,14 +1,14 @@
-=== AumViso – AI SEO & GEO: Schema, Sitemaps & Internal Links ===
+=== AumViso – llms.txt, Schema & Sitemaps for AI Search & SEO ===
 Contributors: aumcreate
-Tags: seo, schema, sitemap, faq, internal links
+Tags: llms.txt, schema, sitemap, ai search, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 2.0.7
+Stable tag: 2.0.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-An all-in-one SEO and GEO toolkit that manages your meta tags, Schema, sitemaps and internal links, and can draft content with AI.
+Generate llms.txt, Schema and XML sitemaps, manage meta tags and internal links, and see which AI crawlers read your site. SEO and AI search in one.
 
 == Description ==
 
@@ -117,6 +117,10 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 6. FAQ content type with the Related Questions (GEO) panel
 
 == Changelog ==
+
+= 2.0.8 =
+* Listing title, tags and summary now name what people search for — llms.txt first. No functional change to the plugin.
+* A line at the foot of the settings screen linking to the rest of the AumCreate ecosystem.
 
 = 2.0.7 =
 * Added: SEO title, meta description and index/noindex fields on the term edit screen for every taxonomy the plugin handles. The front end has read these from term meta all along; until now nothing could write them, so a term renamed after an import kept its old description in search results with nowhere to change it.
