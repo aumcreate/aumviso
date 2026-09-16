@@ -87,6 +87,23 @@ The released source is on GitHub at https://github.com/aumcreate/aumviso — bug
 
 == Frequently Asked Questions ==
 
+= What is llms.txt and do I need it? =
+
+llms.txt is a plain Markdown text file at the root of your site — yoursite.com/llms.txt — that gives AI assistants a curated map of what the site is about and which pages matter, the way robots.txt and sitemap.xml do for search engines. It is a proposed standard, not something any AI vendor requires yet, and it costs nothing: AumViso builds it from content you already have, so there is no reason not to have one.
+
+= Does AumViso work alongside Yoast SEO, Rank Math or All in One SEO? =
+
+Yes, they can be active together. For llms.txt specifically, here is exactly what happens, based on how each plugin serves the file:
+
+* **Yoast SEO and All in One SEO** write a real llms.txt file into your site's root folder (both features are off by default). A file on disk is served by the web server before WordPress runs, so once either has written one, that file is what visitors and crawlers get and AumViso's is not used. To switch to AumViso's, turn the feature off in that plugin and delete the file.
+* **Rank Math** serves llms.txt from WordPress, as AumViso does, on the same hook. AumViso registers earlier in the load order, so with both enabled it is AumViso's llms.txt that is served.
+
+AumViso currently has no switch to hand llms.txt over to another plugin; one is planned. Ask on the support forum if you need it sooner.
+
+= Does llms.txt update automatically when I publish new content? =
+
+Yes. The file is built from your published pages, posts and products and cached; saving any of them clears the cache, so the next request for /llms.txt reflects the change. Nothing is written to disk and there is nothing to regenerate by hand.
+
 = Does this plugin conflict with Yoast SEO or RankMath? =
 
 Yes, running multiple SEO plugins simultaneously will cause duplicate meta tags and Schema output. Disable other SEO plugins before activating AumViso.
@@ -109,12 +126,14 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 
 == Screenshots ==
 
-1. Overview: a health check of the site's SEO and GEO content at a glance
-2. SEO Score panel in the post editor, with the focus keyword and a live checklist
-3. Meta settings: title and description templates, and which content gets SEO fields
-4. Schema settings and Organization structured data
-5. Internal Links manager: keyword to URL mapping applied automatically in content
-6. FAQ content type with the Related Questions (GEO) panel
+1. The generated /llms.txt as an AI assistant sees it: site name, description, and every page, post, FAQ and glossary entry
+2. llms.txt settings: what to include and the site description, served live with no file written
+3. Overview: a health check of the site's SEO and GEO content at a glance
+4. SEO Score panel in the post editor, with the focus keyword and a live checklist
+5. Meta settings: title and description templates, and which content gets SEO fields
+6. Schema settings and Organization structured data
+7. Internal Links manager: keyword to URL mapping applied automatically in content
+8. FAQ content type with the Related Questions (GEO) panel
 
 == Changelog ==
 
