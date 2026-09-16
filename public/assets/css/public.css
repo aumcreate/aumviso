@@ -1,0 +1,133 @@
+/* AumViso Frontend Styles */
+
+/* ---- Breadcrumb ---- */
+.aum-breadcrumb { font-size: 14px; margin: 8px 0 16px; }
+.aum-breadcrumb ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.aum-breadcrumb li { display: inline-flex; align-items: center; }
+.aum-breadcrumb a { text-decoration: none; color: inherit; opacity: .7; }
+.aum-breadcrumb a:hover { opacity: 1; text-decoration: underline; }
+.aum-breadcrumb__sep { color: #999; }
+
+/* ---- FAQ List ---- */
+.aum-faq-list { margin: 24px 0; }
+.aum-faq-item { border-bottom: 1px solid #e5e7eb; padding: 0; }
+.aum-faq-question {
+    font-weight: 600;
+    padding: 16px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+.aum-faq-question::after { content: '+'; font-size: 20px; color: #6b7280; transition: transform .2s; }
+.aum-faq-item.open .aum-faq-question::after { transform: rotate(45deg); }
+.aum-faq-answer { display: none; padding: 0 0 16px; color: #4b5563; line-height: 1.7; }
+.aum-faq-item.open .aum-faq-answer { display: block; }
+
+/* Accordion JS */
+.aum-faq-list.accordion .aum-faq-answer { display: none; }
+.aum-faq-list.list .aum-faq-answer { display: block; }
+
+/* ---- Glossary ---- */
+.aum-glossary-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 24px;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 6px;
+}
+.aum-glossary-letter-link {
+    display: inline-block;
+    width: 28px; height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 50%;
+    background: #e5e7eb;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    color: #374151;
+    transition: background .15s;
+}
+.aum-glossary-letter-link:hover { background: #2271b1; color: #fff; }
+
+.aum-glossary-group { margin-bottom: 32px; }
+.aum-glossary-letter { font-size: 24px; font-weight: 700; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; margin-bottom: 16px; }
+.aum-glossary-term { margin-bottom: 16px; }
+.aum-glossary-term__name { font-size: 16px; margin: 0 0 4px; }
+.aum-glossary-term__name a { text-decoration: none; }
+.aum-glossary-term__name a:hover { text-decoration: underline; }
+.aum-glossary-term__def { margin: 0; color: #6b7280; font-size: 14px; }
+
+/* ---- Guide Steps ---- */
+.aum-guide-steps { margin: 24px 0; }
+.aum-guide-step {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border-left: 4px solid #2271b1;
+}
+.aum-guide-step__number {
+    width: 36px; height: 36px;
+    background: #2271b1;
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 16px;
+}
+.aum-guide-step__content { flex: 1; }
+.aum-guide-step__title { margin: 0 0 8px; font-size: 16px; }
+.aum-guide-step__text { margin: 0; color: #4b5563; line-height: 1.6; }
+
+/* ---- Related Questions ---- */
+.aum-related-questions {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 32px 0;
+}
+.aum-related-questions__title { margin: 0 0 12px; font-size: 16px; color: #1e40af; }
+.aum-related-questions__list { list-style: none; margin: 0; padding: 0; }
+.aum-related-questions__item {
+    padding: 8px 0;
+    border-bottom: 1px solid #dbeafe;
+    font-size: 14px;
+    color: #1e40af;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+.aum-related-questions__item:last-child { border-bottom: none; }
+
+/* ---- Related Content ---- */
+.aum-related-content { margin: 32px 0; }
+.aum-related__title { font-size: 18px; margin-bottom: 12px; }
+.aum-related__list { list-style: none; padding: 0; margin: 0 0 24px; }
+.aum-related__list li { padding: 6px 0; border-bottom: 1px solid #e5e7eb; }
+.aum-related__list li:last-child { border-bottom: none; }
+.aum-related__list a { text-decoration: none; font-size: 14px; }
+.aum-related__list a:hover { text-decoration: underline; }
+
+/* ---- Internal Links ---- */
+.aum-ilink { border-bottom: 1px dashed currentColor; }
+
+/* ---- Summary / Key Takeaways ---- */
+.aum-summary {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0;
+}
+.aum-summary h3 { color: #15803d; margin: 0 0 12px; }
+.aum-summary ul { margin: 0; padding-left: 20px; }
+.aum-summary li { margin-bottom: 6px; color: #166534; font-size: 14px; line-height: 1.6; }

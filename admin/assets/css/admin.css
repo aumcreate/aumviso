@@ -1,0 +1,280 @@
+/* AumViso Admin Styles */
+
+/* ---- Layout ---- */
+.aumviso-dashboard h1 { display: flex; align-items: center; gap: 8px; }
+
+.aumviso-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.aumviso-card {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 16px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+}
+.aumviso-card h2 {
+    margin: 0 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+/* ---- Health list ---- */
+.aumviso-health-list, .aumviso-stat-list, .aumviso-quick-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.aumviso-health-list li { padding: 6px 0; font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+.aumviso-health-list li.ok { color: #1d7045; }
+.aumviso-health-list li.has-issues { color: #8a6914; }
+.aumviso-health-list li.error { color: #8d2020; }
+
+.aumviso-stat-list li { padding: 5px 0; display: flex; justify-content: space-between; border-bottom: 1px solid #f8f8f8; font-size: 13px; }
+.stat-value { font-weight: 600; color: #2271b1; }
+.aumviso-quick-links li { padding: 4px 0; }
+.aumviso-quick-links a { text-decoration: none; font-size: 13px; }
+.aumviso-quick-links a:hover { text-decoration: underline; }
+
+/* ---- Meta Box ---- */
+.aumviso-metabox { font-size: 13px; }
+
+.aumviso-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 16px;
+}
+.aumviso-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #666;
+    transition: all .15s;
+}
+.aumviso-tab:hover { color: #e8501a; }
+.aumviso-tab.active { color: #c23f12; border-bottom-color: #e8501a; font-weight: 600; }
+
+.aumviso-tab-content { display: none; }
+.aumviso-tab-content.active { display: block; }
+
+.aumviso-field { margin-bottom: 16px; }
+.aumviso-field label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.aumviso-char-count {
+    font-weight: normal;
+    font-size: 11px;
+    color: #888;
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+.aumviso-char-count.warn { color: #8a6914; background: #fcf0d0; }
+.aumviso-char-count.over { color: #8d2020; background: #fce8e8; }
+
+/* ---- SERP Preview ---- */
+.aumviso-serp-preview {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 12px 0;
+}
+.aumviso-preview-label { font-size: 11px; color: #888; margin: 0 0 8px; text-transform: uppercase; letter-spacing: .5px; }
+.aumviso-serp__url { font-size: 12px; color: #202124; margin-bottom: 2px; }
+.aumviso-serp__title { font-size: 18px; color: #1a0dab; font-weight: normal; margin-bottom: 2px; line-height: 1.3; }
+.aumviso-serp__title.too-long { color: #d93025; }
+.aumviso-serp__desc { font-size: 13px; color: #4d5156; line-height: 1.5; }
+
+/* ---- Inline fields ---- */
+.aumviso-inline-fields { display: flex; gap: 24px; }
+.aumviso-inline-fields > div { display: flex; flex-direction: column; gap: 4px; }
+
+/* ---- OG Media ---- */
+.aumviso-og-preview { max-width: 200px; margin-bottom: 8px; }
+.aumviso-og-preview img { width: 100%; height: auto; border: 1px solid #ddd; border-radius: 3px; }
+
+/* ---- AI Section ---- */
+.aumviso-ai-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.aumviso-ai-btn { display: inline-flex; align-items: center; gap: 4px; }
+.aumviso-ai-output {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 8px;
+}
+
+/* ---- Widget ---- */
+.aumviso-widget-list li { font-size: 13px; }
+
+/* ---- Meta table ---- */
+.aumviso-meta-table th { width: 180px; vertical-align: top; padding-top: 12px; }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .aumviso-stats-grid { grid-template-columns: 1fr; }
+    .aumviso-inline-fields { flex-direction: column; gap: 12px; }
+}
+
+/* ---- SEO Score Widget ---- */
+.aumviso-score-widget { text-align: center; }
+
+.aumviso-score-circle {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90px; height: 90px;
+    border-radius: 50%;
+    border: 4px solid currentColor;
+    margin: 8px auto 12px;
+}
+.aumviso-score-number { font-size: 28px; font-weight: 700; line-height: 1; }
+.aumviso-score-label  { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+
+.aumviso-score-great   { color: #1d7045; border-color: #1d7045; background: #f0fdf4; }
+.aumviso-score-good    { color: #0f6e56; border-color: #0f6e56; background: #ecfdf5; }
+.aumviso-score-average { color: #8a6914; border-color: #8a6914; background: #fefce8; }
+.aumviso-score-poor    { color: #8d2020; border-color: #8d2020; background: #fef2f2; }
+
+.aumviso-checks-list { list-style: none; margin: 0; padding: 0; text-align: left; }
+.aumviso-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 6px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+.aumviso-check:last-child { border-bottom: none; }
+.aumviso-check__icon  { flex-shrink: 0; font-size: 16px; width: 16px; height: 16px; line-height: 1; }
+.aumviso-check__text  { flex: 1; }
+.aumviso-check__pts   { flex-shrink: 0; font-size: 11px; color: #888; }
+.aumviso-check--good .aumviso-check__icon { color: #1d7045; }
+.aumviso-check--ok   .aumviso-check__icon { color: #8a6914; }
+.aumviso-check--bad  .aumviso-check__icon { color: #b32d2e; }
+.aumviso-check--good  .aumviso-check__pts { color: #1d7045; }
+.aumviso-check--bad   .aumviso-check__text { color: #666; }
+
+/* Re-analyze button (icon-only, with busy spin) */
+.aumviso-reanalyze { display: inline-flex; align-items: center; justify-content: center; }
+.aumviso-reanalyze .dashicons {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 16px; width: 16px; height: 16px; line-height: 1; margin: 0 !important; color: #e8501a;
+}
+.aumviso-reanalyze.is-busy .dashicons { animation: aumviso-spin .8s linear infinite; }
+@keyframes aumviso-spin { to { transform: rotate(360deg); } }
+
+/* AI buttons */
+.aumviso-ai-btn { display: inline-flex; align-items: center; gap: 5px; }
+.aumviso-ai-btn .dashicons,
+#aumviso-ai-copy .dashicons {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 16px; width: 16px; height: 16px; line-height: 1; margin: 0 !important; color: #e8501a;
+}
+#aumviso-ai-copy { display: inline-flex; align-items: center; gap: 5px; }
+
+/* Brand-tint the meta box / score / widget title icons and fix vertical centering */
+#aumviso_meta .postbox-header .dashicons,
+#aumviso_score .postbox-header .dashicons,
+#aumviso_dashboard_widget .dashicons {
+    color: #e8501a !important;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+/* Overview issue detail tables */
+.aumviso-card-full { grid-column: 1 / -1; }
+.aumviso-issue-header { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.aumviso-health-list li { display: block; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.aumviso-health-list li:last-child { border-bottom: none; }
+.aumviso-issue-detail table { font-size: 13px; }
+.aumviso-pagination { margin-top: 6px; display: flex; gap: 4px; flex-wrap: wrap; }
+
+/* ── Technical SEO：合并页的分区导航 ────────────────────────────
+ * 五个原本各占一个标签页的设置合并到这里，所以需要一条跳转导航和分区标题，
+ * 否则它就是一堵三屏高的表单墙 —— 那正是合并要解决的问题，不是要制造的问题。
+ */
+.aml-jump {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 0 0 22px;
+	padding: 12px 14px;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+}
+.aml-jump a {
+	text-decoration: none;
+	font-size: 13px;
+	padding: 4px 11px;
+	border-radius: 5px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	color: #2c3338;
+}
+.aml-jump a:hover { border-color: #e8501a; color: #e8501a; }
+
+.aml-section { scroll-margin-top: 40px; }
+.aml-section + .aml-section {
+	margin-top: 34px;
+	padding-top: 30px;
+	border-top: 1px solid #dcdcde;
+}
+.aml-section-h {
+	margin: 0 0 14px;
+	font-size: 17px;
+	font-weight: 600;
+}
+
+/* 健康报告的一行动作区：「一键修复」和「查看详情」并排 */
+.aml-health-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+.aml-note { background: #f6f7f7; }
+
+/* 合并页的保存按钮吸底 —— 页面有三屏高，按钮在最下面等于没有 */
+.aml-sticky-save {
+	position: sticky;
+	bottom: 0;
+	margin: 24px 0 0;
+	padding: 14px 0;
+	background: linear-gradient(to bottom, rgba(241,241,241,0), #f0f0f1 40%);
+	z-index: 5;
+}
+
+/* 只有一个选项时，操作是一句陈述而不是一个下拉框 */
+.aml-readonly-value {
+	margin: 0;
+	padding: 7px 0;
+	font-weight: 500;
+	color: #2c3338;
+}
+
+/* Overview 的爬虫摘要：几个大数字，一眼能读 */
+.aml-stat-row { display: flex; flex-wrap: wrap; gap: 28px; margin: 6px 0 4px; }
+.aml-stat { display: flex; flex-direction: column; gap: 2px; }
+.aml-stat strong { font-size: 26px; font-weight: 600; line-height: 1.1; color: #2c3338; }
+.aml-stat span { font-size: 12.5px; color: #646970; }
+.aml-stat.is-warn strong { color: #b32d2e; }

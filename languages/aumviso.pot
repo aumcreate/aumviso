@@ -1,0 +1,1130 @@
+# Copyright (C) 2026 AumCreate
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: AumViso 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/aumviso\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-06-19T16:03:02+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: aumviso\n"
+
+#. Plugin Name of the plugin
+#: aumviso.php
+#: admin/class-meta-box.php:28
+msgid "AumViso"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: aumviso.php
+msgid "https://aumcreate.com"
+msgstr ""
+
+#. Description of the plugin
+#: aumviso.php
+msgid "AumViso — SEO + GEO all-in-one plugin: Meta, Schema, Sitemap, FAQ, Glossary, AI Tools."
+msgstr ""
+
+#. Author of the plugin
+#: aumviso.php
+msgid "AumCreate"
+msgstr ""
+
+#: admin/class-admin.php:60
+msgid "SEO/GEO"
+msgstr ""
+
+#: admin/class-admin.php:86
+msgid "Overview"
+msgstr ""
+
+#: admin/class-admin.php:87
+msgid "Meta"
+msgstr ""
+
+#: admin/class-admin.php:88
+msgid "Schema"
+msgstr ""
+
+#: admin/class-admin.php:89
+#: admin/class-admin.php:241
+msgid "Sitemap"
+msgstr ""
+
+#: admin/class-admin.php:90
+msgid "Robots.txt"
+msgstr ""
+
+#: admin/class-admin.php:91
+msgid "Internal Links"
+msgstr ""
+
+#: admin/class-admin.php:92
+#: admin/class-meta-box.php:67
+msgid "AI Tools"
+msgstr ""
+
+#: admin/class-admin.php:93
+msgid "Settings"
+msgstr ""
+
+#: admin/class-admin.php:133
+msgid "SEO + GEO in one place — meta, schema, sitemap, internal links & AI tools."
+msgstr ""
+
+#: admin/class-admin.php:138
+msgid "AumViso sections"
+msgstr ""
+
+#: admin/class-admin.php:188
+msgid "A quick health check of your site’s SEO and GEO content."
+msgstr ""
+
+#: admin/class-admin.php:193
+msgid "SEO Health"
+msgstr ""
+
+#. translators: %d: number of posts.
+#: admin/class-admin.php:201
+#: admin/class-dashboard-widget.php:54
+#, php-format
+msgid "%d posts missing meta description"
+msgstr ""
+
+#: admin/class-admin.php:202
+#: admin/class-dashboard-widget.php:55
+msgid "All posts have meta descriptions"
+msgstr ""
+
+#. translators: %d: number of posts.
+#: admin/class-admin.php:211
+#: admin/class-dashboard-widget.php:61
+#, php-format
+msgid "%d posts missing OG image"
+msgstr ""
+
+#: admin/class-admin.php:212
+#: admin/class-dashboard-widget.php:62
+msgid "All posts have OG images"
+msgstr ""
+
+#. translators: %d: number of pages.
+#: admin/class-admin.php:221
+#: admin/class-dashboard-widget.php:68
+#, php-format
+msgid "%d pages set to noindex"
+msgstr ""
+
+#: admin/class-admin.php:222
+#: admin/class-dashboard-widget.php:69
+msgid "No noindex pages found"
+msgstr ""
+
+#: admin/class-admin.php:231
+msgid "Content"
+msgstr ""
+
+#: admin/class-admin.php:233
+msgid "Published Posts"
+msgstr ""
+
+#: admin/class-admin.php:234
+#: includes/geo/class-cpt-faq.php:34
+#: includes/geo/class-cpt-faq.php:41
+msgid "FAQs"
+msgstr ""
+
+#: admin/class-admin.php:235
+msgid "Glossary Terms"
+msgstr ""
+
+#: admin/class-admin.php:236
+#: includes/geo/class-cpt-guide.php:27
+#: includes/geo/class-cpt-guide.php:31
+msgid "Guides"
+msgstr ""
+
+#: admin/class-admin.php:243
+msgid "Active"
+msgstr ""
+
+#: admin/class-admin.php:244
+msgid "View sitemap"
+msgstr ""
+
+#: admin/class-admin.php:246
+msgid "Disabled"
+msgstr ""
+
+#: admin/class-admin.php:251
+msgid "Quick Actions"
+msgstr ""
+
+#: admin/class-admin.php:253
+msgid "New FAQ"
+msgstr ""
+
+#: admin/class-admin.php:254
+msgid "New Glossary Term"
+msgstr ""
+
+#: admin/class-admin.php:255
+msgid "New Guide"
+msgstr ""
+
+#: admin/class-admin.php:256
+msgid "Edit Robots.txt"
+msgstr ""
+
+#: admin/class-admin.php:257
+msgid "Manage Internal Links"
+msgstr ""
+
+#: admin/class-admin.php:288
+msgid "Show details"
+msgstr ""
+
+#: admin/class-admin.php:298
+msgid "Title"
+msgstr ""
+
+#: admin/class-admin.php:299
+msgid "Type"
+msgstr ""
+
+#: admin/class-admin.php:300
+#: admin/class-admin.php:307
+msgid "Edit"
+msgstr ""
+
+#: admin/class-admin.php:467
+msgid "Generating..."
+msgstr ""
+
+#: admin/class-admin.php:468
+msgid "Error. Please try again."
+msgstr ""
+
+#: admin/class-admin.php:469
+#: includes/geo/class-cpt-faq.php:171
+msgid "Copied!"
+msgstr ""
+
+#: admin/class-ajax-handler.php:32
+msgid "Security check failed."
+msgstr ""
+
+#: admin/class-ajax-handler.php:35
+#: admin/class-ajax-handler.php:129
+#: admin/class-ajax-handler.php:154
+msgid "Permission denied."
+msgstr ""
+
+#: admin/class-ajax-handler.php:42
+msgid "Post not found."
+msgstr ""
+
+#: admin/class-ajax-handler.php:140
+msgid "Keyword and URL are required."
+msgstr ""
+
+#: admin/class-ajax-handler.php:158
+msgid "Invalid ID."
+msgstr ""
+
+#: admin/class-dashboard-widget.php:22
+msgid "AumViso — SEO Status"
+msgstr ""
+
+#: admin/class-dashboard-widget.php:75
+msgid "Sitemap active"
+msgstr ""
+
+#: admin/class-dashboard-widget.php:76
+msgid "Sitemap disabled"
+msgstr ""
+
+#: admin/class-dashboard-widget.php:96
+msgid "View"
+msgstr ""
+
+#: admin/class-dashboard-widget.php:104
+msgid "Open AumViso"
+msgstr ""
+
+#: admin/class-meta-box.php:64
+msgid "General"
+msgstr ""
+
+#: admin/class-meta-box.php:65
+msgid "Social"
+msgstr ""
+
+#: admin/class-meta-box.php:66
+msgid "Advanced"
+msgstr ""
+
+#: admin/class-meta-box.php:75
+msgid "SEO Title"
+msgstr ""
+
+#: admin/class-meta-box.php:82
+msgid "Leave blank to use the global template."
+msgstr ""
+
+#: admin/class-meta-box.php:87
+msgid "Meta Description"
+msgstr ""
+
+#: admin/class-meta-box.php:97
+msgid "Search Preview"
+msgstr ""
+
+#: admin/class-meta-box.php:108
+msgid "Indexing"
+msgstr ""
+
+#: admin/class-meta-box.php:110
+msgid "Index"
+msgstr ""
+
+#: admin/class-meta-box.php:111
+msgid "No Index"
+msgstr ""
+
+#: admin/class-meta-box.php:115
+msgid "Following"
+msgstr ""
+
+#: admin/class-meta-box.php:117
+msgid "Follow"
+msgstr ""
+
+#: admin/class-meta-box.php:118
+msgid "No Follow"
+msgstr ""
+
+#: admin/class-meta-box.php:129
+msgid "OG Title"
+msgstr ""
+
+#: admin/class-meta-box.php:137
+msgid "OG Description"
+msgstr ""
+
+#: admin/class-meta-box.php:144
+msgid "OG Image"
+msgstr ""
+
+#: admin/class-meta-box.php:154
+msgid "Select Image"
+msgstr ""
+
+#: admin/class-meta-box.php:157
+#: includes/geo/class-cpt-faq.php:134
+#: includes/geo/class-cpt-faq.php:158
+#: includes/geo/class-cpt-guide.php:141
+#: includes/geo/class-cpt-guide.php:175
+#: includes/geo/class-cpt-guide.php:211
+#: includes/geo/class-cpt-guide.php:254
+msgid "Remove"
+msgstr ""
+
+#: admin/class-meta-box.php:168
+msgid "Canonical URL"
+msgstr ""
+
+#: admin/class-meta-box.php:173
+msgid "Leave blank to use the post permalink."
+msgstr ""
+
+#: admin/class-meta-box.php:178
+msgid "Linked FAQs"
+msgstr ""
+
+#: admin/class-meta-box.php:179
+msgid "勾选后，这些 FAQ 会以 FAQPage Schema 注入本文章的结构化数据，帮助搜索引擎展示问答摘要。"
+msgstr ""
+
+#: admin/class-meta-box.php:194
+msgid "Schema Type Override"
+msgstr ""
+
+#: admin/class-meta-box.php:196
+msgid "— Auto —"
+msgstr ""
+
+#: admin/class-meta-box.php:208
+msgid "Product Details"
+msgstr ""
+
+#: admin/class-meta-box.php:220
+msgid "Price"
+msgstr ""
+
+#: admin/class-meta-box.php:224
+msgid "Currency"
+msgstr ""
+
+#: admin/class-meta-box.php:228
+msgid "SKU"
+msgstr ""
+
+#: admin/class-meta-box.php:234
+msgid "Availability"
+msgstr ""
+
+#: admin/class-meta-box.php:242
+msgid "Brand"
+msgstr ""
+
+#: admin/class-meta-box.php:248
+msgid "Avg Rating (1-5)"
+msgstr ""
+
+#: admin/class-meta-box.php:252
+msgid "Review Count"
+msgstr ""
+
+#: admin/class-meta-box.php:261
+msgid "Review Details"
+msgstr ""
+
+#: admin/class-meta-box.php:269
+msgid "Item Being Reviewed"
+msgstr ""
+
+#: admin/class-meta-box.php:274
+msgid "Item Type"
+msgstr ""
+
+#: admin/class-meta-box.php:282
+msgid "Your Rating (1-5)"
+msgstr ""
+
+#: admin/class-meta-box.php:287
+msgid "Review Body (optional)"
+msgstr ""
+
+#: admin/class-meta-box.php:289
+msgid "Leave blank to use post content."
+msgstr ""
+
+#: admin/class-meta-box.php:296
+msgid "Video Details"
+msgstr ""
+
+#: admin/class-meta-box.php:305
+msgid "Video URL"
+msgstr ""
+
+#: admin/class-meta-box.php:307
+msgid "Leave blank to auto-detect YouTube/Vimeo in post content."
+msgstr ""
+
+#: admin/class-meta-box.php:310
+msgid "Video Name"
+msgstr ""
+
+#: admin/class-meta-box.php:314
+msgid "Thumbnail URL"
+msgstr ""
+
+#: admin/class-meta-box.php:316
+msgid "Leave blank to use featured image."
+msgstr ""
+
+#: admin/class-meta-box.php:320
+msgid "Duration (ISO 8601)"
+msgstr ""
+
+#: admin/class-meta-box.php:324
+msgid "Upload Date"
+msgstr ""
+
+#: admin/class-meta-box.php:345
+msgid "Generate SEO content using AI (requires API key in Settings)."
+msgstr ""
+
+#: admin/class-meta-box.php:349
+msgid "Generate Meta Description"
+msgstr ""
+
+#: admin/class-meta-box.php:352
+msgid "Generate FAQs"
+msgstr ""
+
+#: admin/class-meta-box.php:355
+msgid "Generate Related Questions"
+msgstr ""
+
+#: admin/class-meta-box.php:361
+msgid "Copy"
+msgstr ""
+
+#: admin/class-settings-page.php:52
+msgid "Settings saved."
+msgstr ""
+
+#: admin/class-settings-page.php:63
+msgid "Save Settings"
+msgstr ""
+
+#: admin/class-settings-page.php:90
+msgid "Title and description templates, the OG fallback image, and which content gets SEO fields."
+msgstr ""
+
+#: admin/class-settings-page.php:95
+msgid "Templates"
+msgstr ""
+
+#: admin/class-settings-page.php:98
+msgid "SEO title template"
+msgstr ""
+
+#: admin/class-settings-page.php:100
+#: admin/class-settings-page.php:106
+msgid "Variables:"
+msgstr ""
+
+#: admin/class-settings-page.php:104
+msgid "Meta description template"
+msgstr ""
+
+#: admin/class-settings-page.php:110
+msgid "OG fallback image"
+msgstr ""
+
+#: admin/class-settings-page.php:112
+msgid "Used when no featured image or OG image is set."
+msgstr ""
+
+#: admin/class-settings-page.php:117
+msgid "Enable SEO fields for"
+msgstr ""
+
+#: admin/class-settings-page.php:118
+msgid "Check a post type to enable, then choose which levels get SEO fields."
+msgstr ""
+
+#: admin/class-settings-page.php:123
+msgid "Post type"
+msgstr ""
+
+#: admin/class-settings-page.php:124
+msgid "Single"
+msgstr ""
+
+#: admin/class-settings-page.php:125
+msgid "Archive"
+msgstr ""
+
+#: admin/class-settings-page.php:126
+msgid "Tax archive"
+msgstr ""
+
+#: admin/class-settings-page.php:203
+msgid "Organization / business structured data (JSON-LD) and social profiles."
+msgstr ""
+
+#: admin/class-settings-page.php:208
+msgid "Organization"
+msgstr ""
+
+#: admin/class-settings-page.php:211
+msgid "Organization type"
+msgstr ""
+
+#: admin/class-settings-page.php:220
+msgid "Organization name"
+msgstr ""
+
+#: admin/class-settings-page.php:225
+msgid "Organization URL"
+msgstr ""
+
+#: admin/class-settings-page.php:230
+msgid "Logo URL"
+msgstr ""
+
+#: admin/class-settings-page.php:235
+msgid "Twitter / X username"
+msgstr ""
+
+#: admin/class-settings-page.php:240
+msgid "Facebook page"
+msgstr ""
+
+#: admin/class-settings-page.php:285
+msgid "Local business details"
+msgstr ""
+
+#: admin/class-settings-page.php:288
+msgid "Street address"
+msgstr ""
+
+#: admin/class-settings-page.php:292
+msgid "City"
+msgstr ""
+
+#: admin/class-settings-page.php:296
+msgid "State / region"
+msgstr ""
+
+#: admin/class-settings-page.php:300
+msgid "Postal code"
+msgstr ""
+
+#: admin/class-settings-page.php:304
+msgid "Country code"
+msgstr ""
+
+#: admin/class-settings-page.php:308
+msgid "Phone"
+msgstr ""
+
+#: admin/class-settings-page.php:312
+msgid "Email"
+msgstr ""
+
+#: admin/class-settings-page.php:316
+msgid "Price range"
+msgstr ""
+
+#: admin/class-settings-page.php:318
+msgid "Use $ signs ($ = budget, $$$$ = luxury)."
+msgstr ""
+
+#: admin/class-settings-page.php:321
+msgid "Geo coordinates"
+msgstr ""
+
+#: admin/class-settings-page.php:323
+msgid "Latitude e.g. 37.7749"
+msgstr ""
+
+#: admin/class-settings-page.php:324
+msgid "Longitude e.g. -122.4194"
+msgstr ""
+
+#: admin/class-settings-page.php:344
+msgid "Generate an XML sitemap and choose what it includes."
+msgstr ""
+
+#: admin/class-settings-page.php:349
+msgid "XML sitemap"
+msgstr ""
+
+#: admin/class-settings-page.php:350
+msgid "Generate XML sitemap"
+msgstr ""
+
+#: admin/class-settings-page.php:357
+msgid "Included content"
+msgstr ""
+
+#: admin/class-settings-page.php:359
+msgid "Post types"
+msgstr ""
+
+#: admin/class-settings-page.php:366
+msgid "Taxonomies"
+msgstr ""
+
+#: admin/class-settings-page.php:373
+msgid "Images"
+msgstr ""
+
+#: admin/class-settings-page.php:374
+msgid "Include images in sitemap"
+msgstr ""
+
+#: admin/class-settings-page.php:396
+#, php-format
+msgid "This content is served at %s"
+msgstr ""
+
+#: admin/class-settings-page.php:402
+msgid "robots.txt"
+msgstr ""
+
+#: admin/class-settings-page.php:423
+msgid "Keywords entered here are automatically linked in post content."
+msgstr ""
+
+#: admin/class-settings-page.php:426
+msgid "Keywords"
+msgstr ""
+
+#: admin/class-settings-page.php:430
+#: admin/class-settings-page.php:463
+msgid "Keyword"
+msgstr ""
+
+#: admin/class-settings-page.php:431
+#: admin/class-settings-page.php:467
+msgid "Target URL"
+msgstr ""
+
+#: admin/class-settings-page.php:432
+msgid "Max"
+msgstr ""
+
+#: admin/class-settings-page.php:433
+msgid "Case"
+msgstr ""
+
+#: admin/class-settings-page.php:434
+msgid "Actions"
+msgstr ""
+
+#: admin/class-settings-page.php:448
+msgid "Delete"
+msgstr ""
+
+#: admin/class-settings-page.php:454
+msgid "No keywords yet."
+msgstr ""
+
+#: admin/class-settings-page.php:461
+#: admin/class-settings-page.php:483
+msgid "Add keyword"
+msgstr ""
+
+#: admin/class-settings-page.php:471
+msgid "Max links per page"
+msgstr ""
+
+#: admin/class-settings-page.php:479
+msgid "Case sensitive"
+msgstr ""
+
+#: admin/class-settings-page.php:500
+msgid "Connect an AI provider for content generation tools."
+msgstr ""
+
+#: admin/class-settings-page.php:505
+msgid "AI provider"
+msgstr ""
+
+#: admin/class-settings-page.php:508
+msgid "Provider"
+msgstr ""
+
+#: admin/class-settings-page.php:516
+msgid "API key"
+msgstr ""
+
+#: admin/class-settings-page.php:518
+msgid "Your API key is stored in the database. Use a restricted key when possible."
+msgstr ""
+
+#: admin/class-settings-page.php:522
+msgid "Model"
+msgstr ""
+
+#: admin/class-settings-page.php:524
+msgid "e.g. gpt-4o-mini, gpt-4o, deepseek-chat"
+msgstr ""
+
+#: admin/class-settings-page.php:547
+msgid "Automation options for internal linking and related content."
+msgstr ""
+
+#: admin/class-settings-page.php:552
+msgid "Internal linking"
+msgstr ""
+
+#: admin/class-settings-page.php:553
+msgid "Enable automatic internal linking"
+msgstr ""
+
+#: admin/class-settings-page.php:555
+msgid "Apply to post types"
+msgstr ""
+
+#: admin/class-settings-page.php:564
+msgid "Related content"
+msgstr ""
+
+#: admin/class-settings-page.php:565
+msgid "Automatically append related content after post content"
+msgstr ""
+
+#: includes/ai/class-ai-connector.php:16
+msgid "No AI API key configured. Go to SEO → Settings → AI Tools."
+msgstr ""
+
+#: includes/ai/class-ai-connector.php:22
+msgid "Unknown AI provider."
+msgstr ""
+
+#: includes/ai/class-ai-connector.php:86
+#, php-format
+msgid "API error (HTTP %d)"
+msgstr ""
+
+#: includes/ai/class-ai-generator.php:24
+msgid "Could not parse AI response as FAQ list."
+msgstr ""
+
+#: includes/ai/class-ai-generator.php:56
+#: includes/ai/class-ai-generator.php:95
+msgid "Could not parse AI response."
+msgstr ""
+
+#: includes/ai/class-ai-generator.php:73
+msgid "Key Takeaways"
+msgstr ""
+
+#: includes/core/class-breadcrumb.php:28
+msgid "Breadcrumb"
+msgstr ""
+
+#: includes/core/class-breadcrumb.php:64
+msgid "Home"
+msgstr ""
+
+#: includes/core/class-breadcrumb.php:115
+#, php-format
+msgid "Search: %s"
+msgstr ""
+
+#: includes/core/class-related-content.php:50
+msgid "Related Guides"
+msgstr ""
+
+#: includes/core/class-related-content.php:57
+msgid "Related Articles"
+msgstr ""
+
+#: includes/core/class-related-content.php:123
+msgid "Related Questions"
+msgstr ""
+
+#: includes/core/class-seo-score.php:32
+msgid "SEO Score"
+msgstr ""
+
+#: includes/core/class-seo-score.php:55
+msgid "Focus Keyword"
+msgstr ""
+
+#: includes/core/class-seo-score.php:59
+msgid "e.g. CNC machining"
+msgstr ""
+
+#: includes/core/class-seo-score.php:64
+#: includes/core/class-seo-score.php:65
+msgid "Re-analyze"
+msgstr ""
+
+#: includes/core/class-seo-score.php:154
+msgid "Custom SEO title set"
+msgstr ""
+
+#: includes/core/class-seo-score.php:163
+#, php-format
+msgid "SEO title length (%d chars, ideal 30–60)"
+msgstr ""
+
+#: includes/core/class-seo-score.php:175
+#, php-format
+msgid "Meta description (%d chars, ideal 80–155)"
+msgstr ""
+
+#: includes/core/class-seo-score.php:184
+#, php-format
+msgid "Content length (%d words, ideal 600+)"
+msgstr ""
+
+#: includes/core/class-seo-score.php:194
+msgid "Featured image set"
+msgstr ""
+
+#: includes/core/class-seo-score.php:203
+msgid "OG / social image set"
+msgstr ""
+
+#: includes/core/class-seo-score.php:212
+msgid "H1 tag found in content"
+msgstr ""
+
+#: includes/core/class-seo-score.php:224
+#, php-format
+msgid "Internal links (%d found, ideal 2+)"
+msgstr ""
+
+#: includes/core/class-seo-score.php:236
+#, php-format
+msgid "Image alt tags (%d/%d images have alt)"
+msgstr ""
+
+#: includes/core/class-seo-score.php:245
+msgid "Canonical URL configured"
+msgstr ""
+
+#: includes/core/class-seo-score.php:255
+#, php-format
+msgid "Focus keyword \"%s\" in SEO title"
+msgstr ""
+
+#: includes/core/class-seo-score.php:263
+msgid "Focus keyword in meta description"
+msgstr ""
+
+#: includes/core/class-seo-score.php:272
+msgid "Focus keyword in first 100 words"
+msgstr ""
+
+#: includes/core/class-seo-score.php:285
+msgid "Focus keyword in H2/H3 heading"
+msgstr ""
+
+#: includes/core/class-seo-score.php:298
+#, php-format
+msgid "Keyword density %.1f%% (ideal 0.5%%–2.5%%)"
+msgstr ""
+
+#: includes/core/class-seo-score.php:331
+msgid "Great"
+msgstr ""
+
+#: includes/core/class-seo-score.php:332
+msgid "Good"
+msgstr ""
+
+#: includes/core/class-seo-score.php:333
+msgid "Average"
+msgstr ""
+
+#: includes/core/class-seo-score.php:334
+msgid "Poor"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:35
+msgid "FAQ"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:36
+#: includes/geo/class-cpt-faq.php:37
+msgid "Add New FAQ"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:38
+msgid "Edit FAQ"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:39
+msgid "Search FAQs"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:40
+msgid "No FAQs found"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:58
+msgid "FAQ Categories"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:59
+msgid "FAQ Category"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:60
+msgid "Add New Category"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:61
+msgid "Edit Category"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:78
+msgid "FAQ Details"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:87
+msgid "Related Questions (GEO)"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:101
+msgid "此面板的字段用于生成结构化数据（Schema），帮助搜索引擎理解内容。正文编辑器用于页面展示；下方「答案」字段专供 FAQ Schema 使用，留空则自动取正文内容。"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:105
+msgid "Answer"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:107
+msgid "专供 FAQ Schema 使用的简洁答案文字。留空则自动使用正文内容。"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:126
+msgid "Add related questions that will appear in a \"People Also Ask\" block."
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:132
+#: includes/geo/class-cpt-faq.php:157
+msgid "Related question..."
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:139
+msgid "Add Question"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:143
+msgid "AI Prompt Template"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:144
+msgid "Copy this prompt to generate related questions with AI:"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:148
+#: includes/geo/class-cpt-faq.php:172
+msgid "Copy Prompt"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:192
+msgid "[FAQ Title]"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:230
+msgid "Answer Preview"
+msgstr ""
+
+#: includes/geo/class-cpt-faq.php:231
+#: includes/geo/class-cpt-glossary.php:308
+#: includes/geo/class-cpt-guide.php:371
+msgid "ID"
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:29
+#: includes/geo/class-cpt-glossary.php:33
+msgid "Glossary"
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:30
+msgid "Term"
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:31
+msgid "Add New Term"
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:32
+msgid "Edit Term"
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:49
+msgid "Term Details"
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:66
+msgid "Fields in this panel are used to generate structured data (Schema). The main content editor controls the page display. The \"Short Definition\" is injected into the DefinedTerm schema and site tooltips, while the \"Full Explanation\" provides richer context for AI and GEO crawlers."
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:72
+msgid "Short Definition"
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:81
+msgid "A concise 1–2 sentence definition used in Schema markup and tooltip displays."
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:87
+msgid "Full Explanation"
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:96
+msgid "Extended explanation providing richer context for GEO / AI indexing."
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:102
+msgid "Related Terms"
+msgstr ""
+
+#: includes/geo/class-cpt-glossary.php:130
+msgid "Select related glossary terms (adds seeAlso references to the DefinedTerm schema)."
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:28
+msgid "Guide"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:29
+msgid "Add New Guide"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:30
+msgid "Edit Guide"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:47
+msgid "Guide Details (HowTo Schema)"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:68
+msgid "Fields in this panel are used to generate HowTo structured data (Schema). The main content editor controls the page presentation, while the fields below—such as steps, tools, and time—are used specifically for Schema markup. This helps search engines present the content as a step-by-step guide in search results."
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:79
+msgid "Estimated Time (minutes)"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:97
+msgid "Difficulty"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:124
+msgid "Tools Required"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:150
+msgid "Add Tool"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:158
+msgid "Materials Required"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:184
+msgid "Add Material"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:192
+msgid "Steps"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:204
+#, php-format
+msgid "Step %d"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:221
+#: includes/geo/class-cpt-guide.php:256
+msgid "Step name"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:229
+#: includes/geo/class-cpt-guide.php:257
+msgid "Step description"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:238
+msgid "Add Step"
+msgstr ""
+
+#: includes/geo/class-cpt-guide.php:246
+msgid "Step"
+msgstr ""
+
+#: includes/geo/class-related-questions.php:39
+msgid "People Also Ask"
+msgstr ""

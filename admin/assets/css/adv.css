@@ -1,0 +1,199 @@
+/* AumViso — admin. Shares the .aml-app design system (brand #e8501a) used
+ * across AumLang / AumViso so the suite feels like one product. Scoped to
+ * .aml-app. */
+.aml-app {
+	--aml-brand: #e8501a;
+	--aml-brand-dark: #c23f12;
+	--aml-ink: #1d2327;
+	--aml-muted: #646970;
+	--aml-faint: #8c8f94;
+	--aml-line: #e4e4e7;
+	--aml-surface: #ffffff;
+	--aml-ok: #0f6e56;
+	--aml-ok-bg: #e1f5ee;
+	--aml-warn: #8a6d1a;
+	--aml-warn-bg: #fcf3da;
+	--aml-danger: #b32d2e;
+	--aml-danger-bg: #fbe6e6;
+	max-width: 1040px;
+	margin-right: 20px;
+}
+
+.aml-app .dashicons { line-height: 1; }
+
+/* Header */
+.aml-header { display: flex; align-items: center; gap: 14px; margin: 18px 0 22px; }
+.aml-logo {
+	width: 46px; height: 46px; border-radius: 13px; background: var(--aml-brand);
+	display: inline-flex; align-items: center; justify-content: center; color: #fff; flex: 0 0 auto;
+}
+.aml-logo .dashicons { font-size: 26px; width: 26px; height: 26px; }
+.aml-title {
+	display: flex; align-items: center; gap: 10px;
+	font-size: 21px; font-weight: 600; line-height: 1.2; margin: 0; padding: 0; color: var(--aml-ink);
+}
+.aml-badge {
+	font-size: 11px; font-weight: 600; letter-spacing: 0.02em;
+	color: var(--aml-brand-dark); background: #fce6dc; padding: 2px 9px; border-radius: 20px;
+}
+.aml-subtitle { margin: 2px 0 0; color: var(--aml-muted); font-size: 13px; }
+
+/* Tabs */
+.aml-app .aml-tabs {
+	display: flex; flex-wrap: wrap; gap: 4px;
+	border-bottom: 1px solid var(--aml-line); margin: 0 0 20px; padding: 0;
+}
+.aml-app .aml-tab {
+	display: inline-flex; align-items: center; gap: 7px;
+	padding: 10px 16px; margin-bottom: -1px;
+	font-size: 13px; font-weight: 600; line-height: 1;
+	color: var(--aml-muted); text-decoration: none;
+	border: 1px solid transparent; border-bottom: 2px solid transparent; border-radius: 9px 9px 0 0;
+	transition: color .12s, background .12s, border-color .12s;
+}
+.aml-app .aml-tab .dashicons {
+	display: inline-flex; align-items: center; justify-content: center;
+	font-size: 17px; width: 17px; height: 17px; margin: 0; color: var(--aml-faint); transition: color .12s;
+}
+.aml-app .aml-tab:hover, .aml-app .aml-tab:focus { color: var(--aml-ink); background: #faf6f4; box-shadow: none; outline: none; }
+.aml-app .aml-tab:hover .dashicons, .aml-app .aml-tab:focus .dashicons { color: var(--aml-brand); }
+.aml-app .aml-tab.is-active { color: var(--aml-brand-dark); border-bottom-color: var(--aml-brand); }
+.aml-app .aml-tab.is-active .dashicons { color: var(--aml-brand); }
+.aml-app .aml-tab.is-disabled { color: var(--aml-faint); opacity: .55; cursor: not-allowed; pointer-events: none; }
+
+.aml-tab-intro { margin: 0 0 16px; color: var(--aml-muted); font-size: 13px; }
+
+/* Cards */
+.aml-app .aml-card {
+	background: var(--aml-surface); border: 1px solid var(--aml-line); border-radius: 14px;
+	padding: 20px 22px; margin: 0 0 16px; box-shadow: 0 1px 2px rgba(0,0,0,.03);
+}
+.aml-card-h {
+	display: flex; align-items: center; gap: 9px;
+	font-size: 15px; font-weight: 600; margin: 0 0 14px; padding: 0; color: var(--aml-ink);
+}
+.aml-card-h .dashicons { color: var(--aml-brand); font-size: 19px; width: 19px; height: 19px; }
+.aml-card-desc { margin: -6px 0 14px; color: var(--aml-muted); font-size: 13px; }
+
+/* Buttons */
+.aml-app .aml-btn {
+	display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+	height: 36px; padding: 0 15px; border-radius: 8px; border: 1px solid #c3c4c7;
+	background: #fff; color: var(--aml-ink); font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none;
+	transition: border-color .12s, background .12s;
+}
+.aml-app .aml-btn:hover { border-color: var(--aml-brand); color: var(--aml-brand-dark); }
+.aml-app .aml-btn .dashicons { font-size: 16px; width: 16px; height: 16px; margin: 0; }
+.aml-app .aml-btn-primary {
+	height: 40px; padding: 0 22px; border: 0; background: var(--aml-brand); color: #fff;
+}
+.aml-app .aml-btn-primary:hover { background: var(--aml-brand-dark); color: #fff; }
+.aml-actions-bar { margin: 4px 0 0; }
+
+/* Fields */
+.aml-field { margin: 0; }
+.aml-label { display: block; font-size: 13px; font-weight: 600; color: var(--aml-ink); margin-bottom: 6px; }
+.aml-app .aml-field input[type="text"] { width: 100%; border-radius: 8px; }
+.aml-field-hint { margin: 6px 0 0; font-size: 12px; color: var(--aml-faint); }
+.aml-field-hint code { font-size: 11px; background: var(--aml-line); padding: 2px 6px; border-radius: 5px; color: var(--aml-muted); }
+
+/* Status pills */
+.aml-pill {
+	display: inline-flex; align-items: center; gap: 4px;
+	font-size: 12px; font-weight: 600; padding: 3px 11px; border-radius: 20px;
+}
+.aml-pill .dashicons { font-size: 14px; width: 14px; height: 14px; }
+.aml-pill-ok { color: var(--aml-ok); background: var(--aml-ok-bg); }
+.aml-pill-danger { color: var(--aml-danger); background: var(--aml-danger-bg); }
+
+/* Toggle switches */
+.aml-switch-row { display: flex; align-items: center; gap: 11px; padding: 6px 0; cursor: pointer; }
+.aml-switch { position: relative; display: inline-block; width: 40px; height: 23px; flex: 0 0 auto; }
+.aml-switch input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.aml-track { position: absolute; inset: 0; background: #c9c9d0; border-radius: 12px; transition: background .15s; pointer-events: none; }
+.aml-track::after { content: ""; position: absolute; top: 2.5px; left: 2.5px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: left .15s; }
+.aml-switch input:checked + .aml-track { background: var(--aml-brand); }
+.aml-switch input:checked + .aml-track::after { left: 19px; }
+.aml-switch-label { font-size: 13px; color: var(--aml-ink); }
+
+/* Field selects */
+.aml-app .aml-field select { width: 100%; height: 36px; border-radius: 8px; }
+
+/* Batch AI */
+#avp-batch-progress { margin-top: 16px; }
+.avp-batch-log {
+	margin: 12px 0 0; max-height: 320px; overflow-y: auto;
+	border: 1px solid var(--aml-line); border-radius: 10px; padding: 8px 12px;
+	font-size: 12.5px; list-style: none;
+}
+.avp-batch-log li { padding: 4px 0; border-top: 1px solid #f1f1f3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.avp-batch-log li:first-child { border-top: 0; }
+.avp-log-ok { color: var(--aml-ok); }
+.avp-log-skip { color: var(--aml-muted); }
+.avp-log-err { color: var(--aml-danger); }
+
+/* ---- Overview ---- */
+.avp-overview-top { display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch; margin-bottom: 16px; }
+
+.avp-score-card {
+	flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center;
+	min-width: 180px; text-align: center;
+}
+.avp-score-ring {
+	width: 110px; height: 110px; border-radius: 50%;
+	display: flex; flex-direction: column; align-items: center; justify-content: center;
+	border: 7px solid var(--aml-brand); color: var(--aml-ink);
+}
+.avp-score-ring.is-great { border-color: var(--aml-ok); }
+.avp-score-ring.is-good { border-color: #3a9d78; }
+.avp-score-ring.is-average { border-color: var(--aml-warn); }
+.avp-score-ring.is-poor { border-color: var(--aml-danger); }
+.avp-score-num { font-size: 32px; font-weight: 700; line-height: 1; }
+.avp-score-cap { font-size: 11px; color: var(--aml-muted); margin-top: 3px; text-transform: uppercase; letter-spacing: .04em; }
+.avp-score-sub { margin-top: 10px; font-size: 13px; color: var(--aml-muted); }
+
+.avp-stat-grid { flex: 1 1 360px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.avp-stat {
+	background: var(--aml-surface); border: 1px solid var(--aml-line); border-radius: 12px; padding: 14px 16px;
+}
+.avp-stat-num { font-size: 24px; font-weight: 700; color: var(--aml-ink); line-height: 1.1; }
+.avp-stat-num.is-warn { color: var(--aml-warn); }
+.avp-stat-num.is-danger { color: var(--aml-danger); }
+.avp-stat-label { margin-top: 4px; font-size: 12px; color: var(--aml-muted); }
+
+/* Grade bands bar */
+.avp-bands { display: flex; height: 14px; border-radius: 8px; overflow: hidden; margin: 6px 0 10px; background: var(--aml-line); }
+.avp-band { height: 100%; }
+.avp-band.great { background: var(--aml-ok); }
+.avp-band.good { background: #3a9d78; }
+.avp-band.average { background: var(--aml-warn); }
+.avp-band.poor { background: var(--aml-danger); }
+.avp-band-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--aml-muted); }
+.avp-band-legend .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+.avp-band-legend .dot.great { background: var(--aml-ok); }
+.avp-band-legend .dot.good { background: #3a9d78; }
+.avp-band-legend .dot.average { background: var(--aml-warn); }
+.avp-band-legend .dot.poor { background: var(--aml-danger); }
+
+/* Per-type / product table */
+.avp-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.avp-table th, .avp-table td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--aml-line); }
+.avp-table th { color: var(--aml-faint); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; font-weight: 600; }
+.avp-table td.num, .avp-table th.num { text-align: right; }
+
+.avp-meta-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 10px; }
+.avp-meta-line .avp-stamp { font-size: 12px; color: var(--aml-faint); }
+
+/* Setup 顶部的关系图：四步一条链，编号在左 */
+.aumviso-map-list { list-style: none; margin: 14px 0 0; padding: 0; counter-reset: none; }
+.aumviso-map-list li { display: flex; gap: 12px; padding: 10px 0; align-items: flex-start; }
+.aumviso-map-list li + li { border-top: 1px solid #f0f0f1; }
+.aumviso-map-num {
+	flex: 0 0 24px; height: 24px; border-radius: 50%;
+	background: #e8501a; color: #fff;
+	display: flex; align-items: center; justify-content: center;
+	font-size: 12px; font-weight: 600;
+}
+.aumviso-map-body { display: flex; flex-direction: column; gap: 2px; }
+.aumviso-map-body a { font-weight: 600; text-decoration: none; }
+.aumviso-map-body span { color: #646970; font-size: 13px; }
