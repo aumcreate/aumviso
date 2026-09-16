@@ -4,7 +4,7 @@ Tags: llms.txt, schema, sitemap, ai search, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 2.0.8
+Stable tag: 2.0.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -98,7 +98,7 @@ Yes, they can be active together. For llms.txt specifically, here is exactly wha
 * **Yoast SEO and All in One SEO** write a real llms.txt file into your site's root folder (both features are off by default). A file on disk is served by the web server before WordPress runs, so once either has written one, that file is what visitors and crawlers get and AumViso's is not used. To switch to AumViso's, turn the feature off in that plugin and delete the file.
 * **Rank Math** serves llms.txt from WordPress, as AumViso does, on the same hook. AumViso registers earlier in the load order, so with both enabled it is AumViso's llms.txt that is served.
 
-AumViso currently has no switch to hand llms.txt over to another plugin; one is planned. Ask on the support forum if you need it sooner.
+The llms.txt tab shows you when another plugin on the site is also producing one and which of the two is actually being served, and has a switch to turn AumViso's off so the other plugin can own it.
 
 = Does llms.txt update automatically when I publish new content? =
 
@@ -136,6 +136,11 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 8. FAQ content type with the Related Questions (GEO) panel
 
 == Changelog ==
+
+= 2.0.9 =
+* llms.txt can now be switched off, so another plugin can own it or the site can go without one. On by default, as before.
+* The llms.txt tab tells you when Yoast SEO, All in One SEO or Rank Math is also producing an llms.txt, and which one visitors actually get: a file written to disk by Yoast or All in One SEO is served by the web server and wins; against Rank Math it is AumViso's.
+* Fixed: on a subdirectory multisite, or any site installed under a sub-folder, /llms.txt answered 404 because the request path was compared without the site's base path.
 
 = 2.0.8 =
 * Listing title, tags and summary now name what people search for — llms.txt first. No functional change to the plugin.

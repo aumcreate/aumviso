@@ -41,6 +41,7 @@ final class AumViso_Adv_LLMS {
 
 	public static function defaults(): array {
 		return [
+			'enabled'      => 1,
 			'description'  => '',
 			'inc_pages'    => 1,
 			'inc_posts'    => 1,
@@ -65,8 +66,11 @@ final class AumViso_Adv_LLMS {
 	// ------------------------------------
 
 	public function maybe_serve(): void {
-		$path = (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH );
-		$path = trim( $path, '/' );
+		if ( empty( $this->get_all()['enabled'] ) ) {
+			return;
+		}
+
+		$path = $this->request_path_relative_to_home();
 
 		if ( 'llms.txt' !== $path && 'llms-full.txt' !== $path ) {
 			return;
@@ -83,6 +87,75 @@ final class AumViso_Adv_LLMS {
 		header( 'Content-Type: text/plain; charset=utf-8' );
 		echo $this->generate( $full ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- plain text body.
 		exit;
+	}
+
+	/**
+	 * The request path with the site's own base path removed.
+	 *
+	 * On a subdirectory multisite (or any install living under /something/)
+	 * the request for the sub-site's llms.txt is /something/llms.txt. Comparing
+	 * the raw path against 'llms.txt' can therefore never match there, which
+	 * is how every sub-site on a subdirectory network was answering 404.
+	 */
+	private function request_path_relative_to_home(): string {
+		$path = trim( (string) wp_parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH ), '/' );
+		$base = trim( (string) wp_parse_url( home_url( '/' ), PHP_URL_PATH ), '/' );
+
+		if ( '' !== $base && 0 === strpos( $path . '/', $base . '/' ) ) {
+			$path = trim( substr( $path, strlen( $base ) ), '/' );
+		}
+
+		return $path;
+	}
+
+	/**
+	 * Other things on this site that also produce an llms.txt, with what that
+	 * means for the request. Read from each plugin's stored options rather
+	 * than its API, so nothing here depends on those plugins being loaded.
+	 *
+	 * @return array<int, array{name:string, wins:bool, note:string}>
+	 */
+	public function competing_sources(): array {
+		$found = [];
+
+		if ( file_exists( ABSPATH . 'llms.txt' ) ) {
+			$found[] = [
+				'name' => __( 'A file named llms.txt in the site root', 'aumviso' ),
+				'wins' => true,
+				'note' => __( 'A file on disk is served by the web server before WordPress runs, so it is what visitors and crawlers get; the one AumViso generates is not used. Yoast SEO and All in One SEO write their llms.txt this way. To use AumViso\'s, delete the file and turn the feature off in the plugin that wrote it.', 'aumviso' ),
+			];
+		}
+
+		$wpseo = get_option( 'wpseo' );
+		if ( defined( 'WPSEO_VERSION' ) && is_array( $wpseo ) && ! empty( $wpseo['enable_llms_txt'] ) ) {
+			$found[] = [
+				'name' => __( 'Yoast SEO: llms.txt is enabled', 'aumviso' ),
+				'wins' => true,
+				'note' => __( 'Yoast writes a real file into the site root on a schedule. Once it exists it wins over AumViso\'s; see the row above if it already does.', 'aumviso' ),
+			];
+		}
+
+		if ( defined( 'AIOSEO_VERSION' ) ) {
+			$aio = json_decode( (string) get_option( 'aioseo_options', '' ), true );
+			if ( ! empty( $aio['sitemap']['llms']['enable'] ) ) {
+				$found[] = [
+					'name' => __( 'All in One SEO: llms.txt is enabled', 'aumviso' ),
+					'wins' => true,
+					'note' => __( 'All in One SEO writes a real file into the site root on a schedule. Once it exists it wins over AumViso\'s; see the row above if it already does.', 'aumviso' ),
+				];
+			}
+		}
+
+		$rm = get_option( 'rank_math_modules', [] );
+		if ( defined( 'RANK_MATH_VERSION' ) && is_array( $rm ) && in_array( 'llms-txt', $rm, true ) ) {
+			$found[] = [
+				'name' => __( 'Rank Math: LLMS Txt module is active', 'aumviso' ),
+				'wins' => false,
+				'note' => __( 'Rank Math serves llms.txt from WordPress the same way AumViso does. AumViso registers first, so while both are on it is AumViso\'s llms.txt that is served. Turn AumViso\'s off above if you want Rank Math\'s instead.', 'aumviso' ),
+			];
+		}
+
+		return $found;
 	}
 
 	private function generate( bool $full ): string {
@@ -225,6 +298,7 @@ final class AumViso_Adv_LLMS {
 
 		$raw   = isset( $_POST['aumviso_adv_llms'] ) && is_array( $_POST['aumviso_adv_llms'] ) ? wp_unslash( $_POST['aumviso_adv_llms'] ) : [];
 		$clean = [
+			'enabled'      => empty( $raw['enabled'] ) ? 0 : 1,
 			'description'  => sanitize_textarea_field( $raw['description'] ?? '' ),
 			'inc_pages'    => empty( $raw['inc_pages'] ) ? 0 : 1,
 			'inc_posts'    => empty( $raw['inc_posts'] ) ? 0 : 1,
@@ -271,8 +345,26 @@ final class AumViso_Adv_LLMS {
 		echo '<form method="post" action="">';
 		wp_nonce_field( self::NONCE_ACTION, self::NONCE_NAME );
 
+		$others = $this->competing_sources();
+		if ( $others ) {
+			echo '<div class="aml-card" style="border-left:4px solid #dba617">';
+			echo '<h2 class="aml-card-h"><span class="dashicons dashicons-info-outline"></span>' . esc_html__( 'Something else on this site also produces an llms.txt', 'aumviso' ) . '</h2>';
+			foreach ( $others as $o ) {
+				printf(
+					'<p style="margin:6px 0"><strong>%1$s</strong> — %2$s<br><span class="aml-field-hint">%3$s</span></p>',
+					esc_html( $o['name'] ),
+					$o['wins'] ? esc_html__( 'it wins over AumViso\'s.', 'aumviso' ) : esc_html__( 'AumViso\'s is the one being served.', 'aumviso' ),
+					esc_html( $o['note'] )
+				);
+			}
+			echo '</div>';
+		}
+
 		echo '<div class="aml-card">';
 		echo '<h2 class="aml-card-h"><span class="dashicons dashicons-admin-settings"></span>' . esc_html__( 'Configuration', 'aumviso' ) . '</h2>';
+
+		$this->toggle( 'enabled', __( 'Serve /llms.txt from this site', 'aumviso' ), $s['enabled'] );
+		echo '<p class="aml-field-hint" style="margin:4px 0 14px">' . esc_html__( 'Turn this off to let another plugin own llms.txt, or to not publish one at all. Everything below only applies while it is on.', 'aumviso' ) . '</p>';
 
 		printf(
 			'<div class="aml-field"><label class="aml-label" for="avp-llms-desc">%1$s</label><textarea id="avp-llms-desc" name="aumviso_adv_llms[description]" rows="3" class="large-text" placeholder="%2$s">%3$s</textarea><p class="aml-field-hint">%4$s</p></div>',
