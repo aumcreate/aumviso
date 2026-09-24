@@ -126,14 +126,12 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 
 == Screenshots ==
 
-1. The generated /llms.txt as an AI assistant sees it: site name, description, and every page, post, FAQ and glossary entry
-2. llms.txt settings: what to include and the site description, served live with no file written
-3. Overview: a health check of the site's SEO and GEO content at a glance
-4. SEO Score panel in the post editor, with the focus keyword and a live checklist
-5. Meta settings: title and description templates, and which content gets SEO fields
-6. Schema settings and Organization structured data
-7. Internal Links manager: keyword to URL mapping applied automatically in content
-8. FAQ content type with the Related Questions (GEO) panel
+1. The generated /llms.txt as an AI assistant reads it: the site, its sections, and every page, post, FAQ, glossary entry, guide and product
+2. llms.txt settings: what goes in it, served live with no file written to your site root
+3. Internal links: a keyword and a URL, linked automatically wherever the keyword appears
+4. The post editor: an SEO score with the specific things that would raise it
+5. Technical SEO: meta templates, Schema, sitemap and robots.txt on one screen
+6. Overview: what needs attention on the site right now
 
 == Changelog ==
 
