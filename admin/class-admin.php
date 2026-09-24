@@ -510,27 +510,6 @@ class AumViso_Admin {
 	 * @param string $severity   'warn' or 'danger'.
 	 */
 	/**
-	 * One line of the health report.
-	 *
-	 * `$fix_url`, when given, offers to fix the whole issue at once instead of one post at a time.
-	 *
-	 * 🔴 **Only pass it for issues a tool can actually fix.** The report used to end at "16 posts missing
-	 * meta description" with a list and an Edit link per row, while a batch generator that fixes exactly
-	 * that sat three tabs away — so the diligent buyer edited sixteen posts by hand and never learned the
-	 * tool existed. A button that leads nowhere useful would be worse still, which is why the caller
-	 * decides rather than this method guessing.
-	 */
-	/**
-	 * Where "Fix all" should send someone.
-	 *
-	 * **AI Tools when there is no key yet, the batch tool when there is.**
-	 *
-	 * Sending everyone to the batch tool regardless produced a screen that contradicted itself: "pick a
-	 * content type and run it" directly above "no AI API key is configured yet". The buyer pressed a button
-	 * offering to fix something and was told, one line later, that it could not. The first step of fixing
-	 * this issue on an unconfigured site **is** configuring the key, so that is where the button goes.
-	 */
-	/**
 	 * Where the crawler card used to be.
 	 *
 	 * AumViso no longer records crawler visits -- that moved to AumCrawl, which
@@ -598,6 +577,16 @@ class AumViso_Admin {
 		];
 	}
 
+	/**
+	 * Where "Fix all" should send someone.
+	 *
+	 * **AI Tools when there is no key yet, the batch tool when there is.**
+	 *
+	 * Sending everyone to the batch tool regardless produced a screen that contradicted itself: "pick a
+	 * content type and run it" directly above "no AI API key is configured yet". The buyer pressed a button
+	 * offering to fix something and was told, one line later, that it could not. The first step of fixing
+	 * this issue on an unconfigured site **is** configuring the key, so that is where the button goes.
+	 */
 	private function bulk_fix_url(): string {
 		if ( ! class_exists( 'AumViso_Adv_Batch' ) ) {
 			return '';
@@ -610,6 +599,17 @@ class AumViso_Admin {
 		return add_query_arg( $args, admin_url( 'admin.php' ) );
 	}
 
+	/**
+	 * One line of the health report.
+	 *
+	 * `$fix_url`, when given, offers to fix the whole issue at once instead of one post at a time.
+	 *
+	 * 🔴 **Only pass it for issues a tool can actually fix.** The report used to end at "16 posts missing
+	 * meta description" with a list and an Edit link per row, while a batch generator that fixes exactly
+	 * that sat three tabs away — so the diligent buyer edited sixteen posts by hand and never learned the
+	 * tool existed. A button that leads nowhere useful would be worse still, which is why the caller
+	 * decides rather than this method guessing.
+	 */
 	private function render_health_row( string $key, string $issue, int $count, string $issue_fmt, string $ok_text, string $page_arg, string $severity, string $fix_url = '' ): void {
 		$per       = 10;
 		$detail_id = 'detail-' . $key;

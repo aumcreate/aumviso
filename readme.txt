@@ -126,12 +126,12 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 
 == Screenshots ==
 
-1. The generated /llms.txt as an AI assistant reads it: the site, its sections, and every page, post, FAQ, glossary entry, guide and product
-2. llms.txt settings: what goes in it, served live with no file written to your site root
-3. Internal links: a keyword and a URL, linked automatically wherever the keyword appears
-4. The post editor: an SEO score with the specific things that would raise it
-5. Technical SEO: meta templates, Schema, sitemap and robots.txt on one screen
-6. Overview: what needs attention on the site right now
+1. The llms.txt AumViso generates for you — site description plus your key pages, grouped by type, rebuilt as you publish.
+2. Choose what goes in: pages, posts, FAQs, glossary, guides, products — and how many of each.
+3. Map a keyword to a URL once. Links are added as the page is served, so your posts are never modified.
+4. A per-post checklist with the score — including the check most plugins skip: whether the post links anywhere at all.
+5. Meta, Schema, sitemaps, robots.txt and internal links in one screen, not five.
+6. What needs attention right now — posts missing a description, content counts, sitemap status, and where to go to fix each one.
 
 == Changelog ==
 
