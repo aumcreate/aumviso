@@ -415,9 +415,7 @@ class AumViso_Admin {
 
 		<div class="aml-grid">
 
-			<?php $this->render_crawler_card(); ?>
-
-			<div class="aml-card aml-card-wide">
+				<div class="aml-card aml-card-wide">
 				<h2 class="aml-card-h"><span class="dashicons dashicons-heart" aria-hidden="true"></span> <?php esc_html_e( 'SEO Health', 'aumviso' ); ?></h2>
 				<ul class="aml-health-list">
 					<?php
@@ -492,6 +490,9 @@ class AumViso_Admin {
 					<li><a href="<?php echo esc_url( self::tab_url( 'links' ) ); ?>"><span class="dashicons dashicons-admin-links" aria-hidden="true"></span> <?php esc_html_e( 'Manage Internal Links', 'aumviso' ); ?></a></li>
 				</ul>
 			</div>
+
+		
+		<?php $this->render_crawler_card(); ?>
 
 		</div>
 		<?php

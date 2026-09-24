@@ -4,7 +4,7 @@ Tags: llms.txt, schema, sitemap, ai search, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 2.0.11
+Stable tag: 2.0.12
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -136,6 +136,9 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 8. FAQ content type with the Related Questions (GEO) panel
 
 == Changelog ==
+
+= 2.0.12 =
+* The card suggesting AumCrawl has moved to the bottom of the overview. It was sitting above the site's own SEO health, which is the wrong order: your site's status comes first, a suggestion to install something comes last.
 
 = 2.0.11 =
 * The AI crawler feature has moved to AumCrawl, a separate free plugin, and is no longer part of AumViso. If you were blocking crawlers here, **they are not being blocked any more**. Your rules and your visit history are untouched in the database: install AumCrawl and it takes both over. A notice in the admin says so on any site that had rules.
