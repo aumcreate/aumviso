@@ -4,7 +4,7 @@ Tags: llms.txt, schema, sitemap, ai search, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 2.0.9
+Stable tag: 2.0.10
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -136,6 +136,10 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 8. FAQ content type with the Related Questions (GEO) panel
 
 == Changelog ==
+
+= 2.0.10 =
+* The plugin's own description in the Plugins list now leads with llms.txt, matching how the plugin is described everywhere else.
+* Added a link from the Plugins list to the plugin's page on aumcreate.com.
 
 = 2.0.9 =
 * llms.txt can now be switched off, so another plugin can own it or the site can go without one. On by default, as before.
