@@ -4,11 +4,11 @@ Tags: llms.txt, schema, sitemap, ai search, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 2.0.10
+Stable tag: 2.0.11
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Generate llms.txt, Schema and XML sitemaps, manage meta tags and internal links, and see which AI crawlers read your site. SEO and AI search in one.
+Generate llms.txt, Schema and XML sitemaps so AI assistants and search engines can read your site. Meta tags and internal links included.
 
 == Description ==
 
@@ -136,6 +136,11 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 8. FAQ content type with the Related Questions (GEO) panel
 
 == Changelog ==
+
+= 2.0.11 =
+* The AI crawler feature has moved to AumCrawl, a separate free plugin, and is no longer part of AumViso. If you were blocking crawlers here, **they are not being blocked any more**. Your rules and your visit history are untouched in the database: install AumCrawl and it takes both over. A notice in the admin says so on any site that had rules.
+* Why: both plugins carried the same crawler code, and keeping two copies in step turned out not to work — a fix made in one of them sat unapplied in the other, and the blocking rules set here were silently ignored once AumCrawl was installed. One copy, in the plugin named after the job, is the only version of this that stays correct.
+* The overview now points at AumCrawl instead of showing crawler counts.
 
 = 2.0.10 =
 * The plugin's own description in the Plugins list now leads with llms.txt, matching how the plugin is described everywhere else.

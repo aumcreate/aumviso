@@ -181,9 +181,6 @@ class AumViso_Admin {
 		if ( $console ) {
 			$modular += $console->tabs();
 		}
-		if ( class_exists( 'AumViso_Crawl_Module' ) ) {
-			$modular += AumViso_Crawl_Module::tabs();
-		}
 
 		/* Everything this class renders on its own, and therefore always has. */
 		$mine = [ 'setup', 'overview', 'technical', 'settings', 'ai' ];
@@ -299,9 +296,6 @@ class AumViso_Admin {
 					case 'technical':
 						$this->render_technical( $settings );
 						break;
-					case 'crawlers':
-						AumViso_Crawl_Module::render_body();
-						break;
 					case 'ai':
 						$settings->render_ai();
 						break;
@@ -334,7 +328,7 @@ class AumViso_Admin {
 	 * tags in the URL itself.
 	 */
 	private function render_ecosystem_note(): void {
-		$url = 'https://aumcreate.com/?utm_source=plugin&utm_medium=aumviso&utm_campaign=settings';
+		$url = 'https://aumcreate.com/plugins/aumviso/?utm_source=plugin&utm_medium=aumviso&utm_campaign=settings';
 		echo '<p class="aum-ecosystem-note" style="margin:24px 0 0;color:#646970;font-size:12px">';
 		printf(
 			/* translators: %s: link to aumcreate.com */
@@ -536,48 +530,71 @@ class AumViso_Admin {
 	 * this issue on an unconfigured site **is** configuring the key, so that is where the button goes.
 	 */
 	/**
-	 * "Who actually read this site" — the one number here anybody understands.
+	 * Where the crawler card used to be.
 	 *
-	 * Everything else on this screen needs a paragraph of SEO to appreciate. This does not: a crawler came,
-	 * or it did not, and it either was who it claimed to be or it was not. Putting it first is deliberate.
-	 *
-	 * ⚠️ A **summary**, not the panel. The full screen carries thirty-five crawlers and a switch each;
-	 * moving that here would trade one wall for another. Nothing is printed at all when there is no data —
-	 * a fresh install showing four zeroes reads as a fault rather than as silence.
+	 * AumViso no longer records crawler visits -- that moved to AumCrawl, which
+	 * does the whole job rather than half of it. This card stays so the space
+	 * says where the feature went instead of the feature simply vanishing.
 	 */
 	private function render_crawler_card(): void {
-		if ( ! class_exists( 'AumViso_Crawl_Module' ) ) {
+		if ( defined( 'AUMCRAWL_VERSION' ) ) {
 			return;
 		}
-		$s = AumViso_Crawl_Module::summary();
-		if ( ! $s ) {
-			return;
-		}
+
+		$install = self::aumcrawl_action_url();
 		?>
 		<div class="aml-card aml-card-wide">
 			<h2 class="aml-card-h">
 				<span class="dashicons dashicons-visibility" aria-hidden="true"></span>
-				<?php esc_html_e( 'Who read this site', 'aumviso' ); ?>
+				<?php esc_html_e( 'See who reads this site', 'aumviso' ); ?>
 			</h2>
-			<div class="aml-stat-row">
-				<div class="aml-stat"><strong><?php echo esc_html( number_format_i18n( $s['bots'] ) ); ?></strong>
-					<span><?php esc_html_e( 'crawlers', 'aumviso' ); ?></span></div>
-				<div class="aml-stat"><strong><?php echo esc_html( number_format_i18n( $s['hits'] ) ); ?></strong>
-					<span><?php esc_html_e( 'visits (30 days)', 'aumviso' ); ?></span></div>
-				<div class="aml-stat"><strong><?php echo esc_html( number_format_i18n( $s['verified'] ) ); ?></strong>
-					<span><?php esc_html_e( 'identity confirmed', 'aumviso' ); ?></span></div>
-				<?php if ( $s['suspect'] > 0 ) : ?>
-					<div class="aml-stat is-warn"><strong><?php echo esc_html( number_format_i18n( $s['suspect'] ) ); ?></strong>
-						<span><?php esc_html_e( 'claimed to be a crawler and were not', 'aumviso' ); ?></span></div>
-				<?php endif; ?>
-			</div>
-			<p class="aml-actions-bar">
-				<a class="aml-btn" href="<?php echo esc_url( add_query_arg( [ 'page' => 'aumviso', 'tab' => 'crawlers' ], admin_url( 'admin.php' ) ) ); ?>">
-					<?php esc_html_e( 'See all crawlers', 'aumviso' ); ?>
-				</a>
+			<p class="aml-card-desc">
+				<?php esc_html_e( 'AumCrawl — also free — shows which AI crawlers and search engines read your site, checks that each one is who it claims to be, and lets you decide which ones to allow.', 'aumviso' ); ?>
 			</p>
+			<?php if ( $install ) : ?>
+				<p class="aml-actions-bar">
+					<a class="aml-btn" href="<?php echo esc_url( $install['url'] ); ?>"><?php echo esc_html( $install['label'] ); ?></a>
+				</p>
+			<?php endif; ?>
 		</div>
 		<?php
+	}
+
+	/**
+	 * A link that installs or activates AumCrawl, or nothing when it is not
+	 * this user's to install.
+	 *
+	 * The state and the wording come from core, so the button says the same
+	 * thing it would say in Plugins > Add New, and stays correct when the
+	 * plugin is present but inactive.
+	 *
+	 * @return array{url:string,label:string}|null
+	 */
+	private static function aumcrawl_action_url(): ?array {
+		if ( ! function_exists( 'is_plugin_active' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+
+		$file = 'aumcrawl/aumcrawl.php';
+
+		if ( file_exists( WP_PLUGIN_DIR . '/' . $file ) ) {
+			if ( is_plugin_active( $file ) || ! current_user_can( 'activate_plugins' ) ) {
+				return null;
+			}
+			return [
+				'url'   => wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=' . rawurlencode( $file ) ), 'activate-plugin_' . $file ),
+				'label' => __( 'Activate AumCrawl', 'aumviso' ),
+			];
+		}
+
+		if ( ! current_user_can( 'install_plugins' ) ) {
+			return null;
+		}
+
+		return [
+			'url'   => wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=aumcrawl' ), 'install-plugin_aumcrawl' ),
+			'label' => __( 'Install AumCrawl', 'aumviso' ),
+		];
 	}
 
 	private function bulk_fix_url(): string {

@@ -4,7 +4,7 @@
  * Plugin Name: AumViso – llms.txt, Schema & Sitemaps for AI Search & SEO
  * Plugin URI: https://aumcreate.com/plugins/aumviso
  * Description: SEO and AI search in one: llms.txt, Schema, XML sitemaps, meta tags, internal links, FAQ/Glossary/Guide content types, and a log of which AI crawlers read your site.
- * Version:     2.0.10
+ * Version:     2.0.11
  * Author:      AumCreate
  * Author URI:  https://aumcreate.com
  * Text Domain: aumviso
@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
 require_once plugin_dir_path(__FILE__) . 'includes/core/class-activator.php';
 
 // Constants
-define('AUMVISO_VERSION',   '2.0.10');
+define('AUMVISO_VERSION',   '2.0.11');
 define('AUMVISO_FILE',      __FILE__);
 define('AUMVISO_DIR',       plugin_dir_path(__FILE__));
 define('AUMVISO_URL',       plugin_dir_url(__FILE__));
@@ -62,17 +62,9 @@ final class AumViso
         require_once AUMVISO_DIR . 'includes/core/class-internal-links.php';
         require_once AUMVISO_DIR . 'includes/core/class-related-content.php';
         require_once AUMVISO_DIR . 'includes/core/class-seo-score.php';
+        require_once AUMVISO_DIR . 'includes/core/class-crawl-moved.php';
 
         // Product Sources (unified registry — feeds Product schema, GEO console, llms.txt, AI factory)
-        /*
-         * Crawler visibility — the one screen here a non-specialist can read at a glance.
-         *
-         * Loads itself, and stands down entirely when the standalone AI Crawler Control plugin is active:
-         * two copies would write duplicate robots.txt rules and keep two divergent visit logs.
-         */
-        require_once AUMVISO_DIR . 'includes/crawl/class-crawl-module.php';
-        AumViso_Crawl_Module::boot();
-
         require_once AUMVISO_DIR . 'includes/sources/interface-product-source.php';
         require_once AUMVISO_DIR . 'includes/sources/class-product-registry.php';
 
@@ -118,6 +110,8 @@ final class AumViso
             require_once AUMVISO_DIR . 'admin/class-dashboard-widget.php';
             require_once AUMVISO_DIR . 'admin/class-settings-page.php';
             require_once AUMVISO_DIR . 'admin/class-ajax-handler.php';
+
+            AumViso_Crawl_Moved::register();
         }
     }
 
