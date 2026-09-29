@@ -4,7 +4,7 @@ Tags: llms.txt, schema, sitemap, ai search, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 2.0.12
+Stable tag: 2.0.14
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,7 +76,13 @@ Every core SEO feature - meta tags, Schema, sitemaps, internal links, breadcrumb
 
 = Source code =
 
-The released source is on GitHub at https://github.com/aumcreate/aumviso — bug reports and pull requests are welcome there.
+The released source is on GitHub at [github.com/aumcreate/aumviso](https://github.com/aumcreate/aumviso) — bug reports and pull requests are welcome there.
+
+= More from AumCreate =
+
+The full list of what this plugin writes — every schema type, how the sitemap is split, what goes into llms.txt: [aumcreate.com/plugins/aumviso](https://aumcreate.com/plugins/aumviso)
+
+Also free from AumCreate: AI crawler control, AI translation for WordPress, digital-goods checkout for WooCommerce, and a hosted chat widget: [aumcreate.com/plugins](https://aumcreate.com/plugins)
 
 == Installation ==
 
@@ -134,6 +140,12 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 6. What needs attention right now — posts missing a description, content counts, sitemap status, and where to go to fix each one.
 
 == Changelog ==
+
+= 2.0.14 =
+* The links in the description are now real links. They were plain text, because wordpress.org does not turn a bare address into a link.
+
+= 2.0.13 =
+* Added a short section pointing to the plugin's own page on aumcreate.com and to the other free AumCreate plugins. No code changes.
 
 = 2.0.12 =
 * The card suggesting AumCrawl has moved to the bottom of the overview. It was sitting above the site's own SEO health, which is the wrong order: your site's status comes first, a suggestion to install something comes last.
