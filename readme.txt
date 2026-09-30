@@ -4,7 +4,7 @@ Tags: llms.txt, schema, sitemap, ai search, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 2.0.15
+Stable tag: 2.0.16
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -140,6 +140,9 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 6. What needs attention right now — posts missing a description, content counts, sitemap status, and where to go to fix each one.
 
 == Changelog ==
+
+= 2.0.16 =
+* Fixed: the menu item could disappear from the admin when the AumCreate theme moved its own page out of the top level. The parent menu is now asked for, not assumed.
 
 = 2.0.15 =
 * Fixed: with WooCommerce's "coming soon" mode on, the plugin still printed the page's canonical URL, meta description and og:title to anonymous visitors. It now stays quiet on a screened request.
