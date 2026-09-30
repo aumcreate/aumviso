@@ -4,7 +4,7 @@ Tags: llms.txt, schema, sitemap, ai search, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 2.0.16
+Stable tag: 2.0.17
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -140,6 +140,10 @@ In the post editor, go to the **Advanced** tab in the AumViso meta box. Under **
 6. What needs attention right now — posts missing a description, content counts, sitemap status, and where to go to fix each one.
 
 == Changelog ==
+
+= 2.0.17 =
+* Fixed: the meta description could contain raw shortcode text when a post had no excerpt and began with a shortcode.
+* Fixed: /sitemap.xml no longer redirects to a trailing-slash URL — robots.txt advertises it without one.
 
 = 2.0.16 =
 * Fixed: the menu item could disappear from the admin when the AumCreate theme moved its own page out of the top level. The parent menu is now asked for, not assumed.

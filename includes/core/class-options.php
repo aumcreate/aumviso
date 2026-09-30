@@ -129,7 +129,7 @@ class AumViso_Options {
 
         if ( $object instanceof WP_Post ) {
             $vars['{post_title}']   = $object->post_title;
-            $vars['{post_excerpt}'] = wp_trim_words( $object->post_excerpt ?: wp_strip_all_tags( $object->post_content ), 25 );
+            $vars['{post_excerpt}'] = wp_trim_words( $object->post_excerpt ?: wp_strip_all_tags( strip_shortcodes( $object->post_content ) ), 25 );
             $vars['{author}']       = get_the_author_meta( 'display_name', $object->post_author );
 
             $cats = get_the_category( $object->ID );
@@ -220,7 +220,7 @@ class AumViso_Options {
             $id   = (int) get_option( 'page_for_posts' );
             $post = $id ? get_post( $id ) : null;
             return $post
-                ? wp_trim_words( $post->post_excerpt ?: wp_strip_all_tags( $post->post_content ), 25 )
+                ? wp_trim_words( $post->post_excerpt ?: wp_strip_all_tags( strip_shortcodes( $post->post_content ) ), 25 )
                 : (string) get_bloginfo( 'description' );
         }
         if ( is_author() ) {

@@ -29,6 +29,18 @@ class AumViso_Sitemap {
     // ------------------------------------
 
     public function register_rewrites(): void {
+		/*
+		 * 🔴 别让规范化重定向给 /sitemap.xml 加尾斜杠。
+		 *
+		 * 2026-09-30 在干净站上量到：robots.txt 通告的是 /sitemap.xml，而它 301 到
+		 * /sitemap.xml/（固定链接结构带尾斜杠，redirect_canonical 照章办事）。
+		 * 跟随之后内容是对的，所以从来没人发现——但一个 SEO 插件自己通告一个会跳转
+		 * 的地址，说不过去。
+		 */
+		add_filter( 'redirect_canonical', static function ( $redirect ) {
+			return get_query_var( 'aumviso_sitemap' ) ? false : $redirect;
+		} );
+		
         add_rewrite_rule( '^sitemap\.xml$', 'index.php?aumviso_sitemap=index', 'top' );
         add_rewrite_rule( '^([a-z0-9_-]+)-sitemap\.xml$', 'index.php?aumviso_sitemap=$matches[1]', 'top' );
         add_rewrite_rule( '^([a-z0-9_-]+)-sitemap(\d+)\.xml$', 'index.php?aumviso_sitemap=$matches[1]&aumviso_sitemap_page=$matches[2]', 'top' );
