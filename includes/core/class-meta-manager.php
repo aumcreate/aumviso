@@ -18,6 +18,7 @@ class AumViso_MetaManager {
     }
 
     private function __construct() {
+        AumViso_HeadGate::init();
         // Remove default WP title tag; we handle it.
         add_filter( 'pre_get_document_title', [ $this, 'get_title' ], 10 );
         add_action( 'wp_head', [ $this, 'output_meta' ], 1 );
@@ -31,6 +32,19 @@ class AumViso_MetaManager {
     // ------------------------------------
 
     public function get_title( string $title ): string {
+        /*
+         * 门控时不用我们存的 SEO 标题去覆盖——把这一页交回给 WordPress。
+         *
+         * ⚠️ 交回去之后 <title> 仍然是真实页面标题（核心 wp_get_document_title()
+         * 的固有行为，Woo 的门控没有改它）。**那不是我们的泄漏，我们也不去改它**：
+         * 一个 SEO 插件在门控页上悄悄改写文档标题，是「比核心更严」而不是
+         * 「补自己的漏」，而且出问题时没人会想到来这里找。
+         * 想要那个行为的人挂 aumviso_output_head_meta 之外的自己那一层——
+         * 我们的主题就是这么做的。
+         */
+        if ( ! AumViso_HeadGate::should_output( 'title' ) ) {
+            return $title;
+        }
         $context = self::detect_context();
         if ( ! $context ) return $title;
 
@@ -53,6 +67,9 @@ class AumViso_MetaManager {
     // ------------------------------------
 
     public function output_meta(): void {
+        if ( ! AumViso_HeadGate::should_output( 'meta' ) ) {
+            return;
+        }
         $context = self::detect_context();
         if ( ! $context ) return;
 

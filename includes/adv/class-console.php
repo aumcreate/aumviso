@@ -177,7 +177,14 @@ final class AumViso_Adv_Console {
 	 * @param array  $extra Extra query args.
 	 */
 	public static function url( string $tab = '', array $extra = [] ): string {
-		$base = menu_page_url( self::SLUG, false );
+		/*
+		 * 🔴 menu_page_url() 在 return 之前会 esc_url()（wp-admin/includes/plugin.php），
+		 * 所以父级带查询串时拿回来的分隔符是 `&#038;`。再喂给 add_query_arg() 会被当成
+		 * 锚点摘掉，后面的参数整个丢失。这里解回普通 URL，转义留给调用方。
+		 * 今天的父级只有一个查询参数所以不会中，但那是依赖别人不变——
+		 * 引擎线 2026-09-29 在 aumnexcart 上撞到了真的（父级是 edit.php?post_type=…）。
+		 */
+		$base = wp_specialchars_decode( menu_page_url( self::SLUG, false ), ENT_QUOTES );
 		if ( ! $base ) {
 			$base = admin_url( 'admin.php?page=' . self::SLUG );
 		}

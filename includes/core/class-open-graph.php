@@ -17,6 +17,9 @@ class AumViso_OpenGraph {
     }
 
     public function output_og(): void {
+        if ( ! AumViso_HeadGate::should_output( 'og' ) ) {
+            return;
+        }
         if ( is_admin() ) return;
         // Reuse MetaManager context detection. Skip OG output if the page is not enabled.
         if ( ! AumViso_MetaManager::detect_context() ) return;
